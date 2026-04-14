@@ -1,5 +1,54 @@
-  allure-report:
-    name: Generate Allure Report
+name: CI/CD Pipeline for Virtual Assistant
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  COVERAGE_THRESHOLD: 70
+
+jobs:
+  lint-and-test:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      
+      - name: Restore dependencies
+        run: dotnet restore
+      
+      - name: Build with analyzers
+        run: dotnet build --no-restore --configuration Release --no-incremental
+      
+      - name: Run unit tests
+        run: dotnet test VirtualAssistant.Tests.Unit/VirtualAssistant.Tests.Unit.csproj --configuration Release --no-build --logger "trx"
+      
+      - name: Run integration tests
+        run: dotnet test VirtualAssistant.Tests.Integration/VirtualAssistant.Tests.Integration.csproj --configuration Release --no-build --logger "trx"
+      
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            **/TestResults/*.trx
+            **/bin/Release/**/*.xml
+          retention-days: 7
+
+  coverage:
+    name: Code Coverage Analysis
     runs-on: ubuntu-latest
     needs: lint-and-test
     
@@ -10,32 +59,46 @@
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
       
       - name: Restore dependencies
         run: dotnet restore
       
-      - name: Run tests with Allure
+      - name: Build project
+        run: dotnet build --no-restore --configuration Release
+      
+      - name: Run tests with coverage
         run: |
           dotnet test VirtualAssistant.Tests.Unit/VirtualAssistant.Tests.Unit.csproj \
             --configuration Release \
-            --logger "trx" \
-            --results-directory ./TestResults
+            --no-build \
+            --collect:"XPlat Code Coverage" \
+            --settings coverlet.runsettings \
+            --results-directory ./CoverageResults
       
-      - name: Install Allure
+      - name: Generate coverage report
         run: |
-          wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
-          tar -xzf allure-2.27.0.tgz
-          sudo mv allure-2.27.0 /opt/allure
-          sudo ln -s /opt/allure/bin/allure /usr/local/bin/allure
+          reportgenerator \
+            -reports:"./CoverageResults/**/coverage.cobertura.xml" \
+            -targetdir:"./CoverageReport" \
+            -reporttypes:"Html;HtmlSummary;TextSummary"
       
-      - name: Generate Allure Report
+      - name: Check coverage threshold
         run: |
-          allure generate ./TestResults -o ./allure-report --clean
+          COVERAGE=$(grep -oP 'line-rate="\K[0-9.]+' ./CoverageResults/**/coverage.cobertura.xml | head -1)
+          COVERAGE_PERCENT=$(echo "$COVERAGE * 100" | bc | cut -d. -f1)
+          echo "Code coverage: ${COVERAGE_PERCENT}%"
+          
+          if [ "$COVERAGE_PERCENT" -lt "${{ env.COVERAGE_THRESHOLD }}" ]; then
+            echo "ERROR: Coverage ${COVERAGE_PERCENT}% is below threshold ${{ env.COVERAGE_THRESHOLD }}%"
+            exit 1
+          else
+            echo "SUCCESS: Coverage ${COVERAGE_PERCENT}% meets threshold ${{ env.COVERAGE_THRESHOLD }}%"
+          fi
       
-      - name: Upload Allure Report
+      - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report
-          path: ./allure-report/
+          name: coverage-report
+          path: ./CoverageReport/
           retention-days: 14
