@@ -24,5 +24,6 @@
     <PkgStyleCop_Analyzers_Unstable Condition=" '$(PkgStyleCop_Analyzers_Unstable)' == '' ">C:\Users\Admin\.nuget\packages\stylecop.analyzers.unstable\1.2.0.507</PkgStyleCop_Analyzers_Unstable>
     <PkgSonarAnalyzer_CSharp Condition=" '$(PkgSonarAnalyzer_CSharp)' == '' ">C:\Users\Admin\.nuget\packages\sonaranalyzer.csharp\9.25.0.90414</PkgSonarAnalyzer_CSharp>
     <PkgNUnit_Analyzers Condition=" '$(PkgNUnit_Analyzers)' == '' ">C:\Users\Admin\.nuget\packages\nunit.analyzers\3.9.0</PkgNUnit_Analyzers>
+    <PkgAspectInjector Condition=" '$(PkgAspectInjector)' == '' ">C:\Users\Admin\.nuget\packages\aspectinjector\2.8.1</PkgAspectInjector>
   </PropertyGroup>
 </Project>

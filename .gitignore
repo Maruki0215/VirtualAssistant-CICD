@@ -66,3 +66,7 @@ coverage.xml
 # Добавьте в конец файла .gitignore
 # Exclude empty class files
 **/Class1.cs
+
+echo "CoverageReport/" >> .gitignore
+echo "CoverageResults/" >> .gitignore
+echo "TestResults/" >> .gitignore

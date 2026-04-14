@@ -22,6 +22,7 @@ C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssis
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\bin\Debug\net8.0\NuGet.Frameworks.dll
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\bin\Debug\net8.0\nunit.framework.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\bin\Debug\net8.0\nunit.framework.legacy.dll
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\bin\Debug\net8.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\bin\Debug\net8.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\bin\Debug\net8.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll

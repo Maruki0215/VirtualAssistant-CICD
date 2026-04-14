@@ -1,20 +1,7 @@
-name: CI/CD Pipeline for Virtual Assistant
-
-on:
-  push:
-    branches: [ "main", "develop" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-env:
-  DOTNET_VERSION: '8.0.x'
-  PROJECT_PATH: 'VirtualAssistant.sln'
-
-jobs:
-  lint-and-test:
-    name: Lint and Test
+  allure-report:
+    name: Generate Allure Report
     runs-on: ubuntu-latest
+    needs: lint-and-test
     
     steps:
       - name: Checkout code
@@ -23,26 +10,32 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          dotnet-version: '8.0.x'
       
       - name: Restore dependencies
-        run: dotnet restore ${{ env.PROJECT_PATH }}
+        run: dotnet restore
       
-      - name: Build with analyzers
-        run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release --no-incremental
+      - name: Run tests with Allure
+        run: |
+          dotnet test VirtualAssistant.Tests.Unit/VirtualAssistant.Tests.Unit.csproj \
+            --configuration Release \
+            --logger "trx" \
+            --results-directory ./TestResults
       
-      - name: Run unit tests
-        run: dotnet test VirtualAssistant.Tests.Unit/VirtualAssistant.Tests.Unit.csproj --configuration Release --no-build --logger "trx"
+      - name: Install Allure
+        run: |
+          wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -xzf allure-2.27.0.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/local/bin/allure
       
-      - name: Run integration tests
-        run: dotnet test VirtualAssistant.Tests.Integration/VirtualAssistant.Tests.Integration.csproj --configuration Release --no-build --logger "trx"
+      - name: Generate Allure Report
+        run: |
+          allure generate ./TestResults -o ./allure-report --clean
       
-      - name: Upload test results
-        if: always()
+      - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
-          path: |
-            **/TestResults/*.trx
-            **/bin/Release/**/*.xml
-          retention-days: 7
+          name: allure-report
+          path: ./allure-report/
+          retention-days: 14

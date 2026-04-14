@@ -4,15 +4,16 @@
     <DataCollectors>
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
-          <Format>cobertura,json,lcov</Format>
-          <Exclude>[xunit.*]*,[*.Tests]*,[*.Integration]*,[Microsoft.*]*,[System.*]*</Exclude>
-          <ExcludeByFile>**/*.Designer.cs,**/*.AssemblyInfo.cs,**/Program.cs</ExcludeByFile>
-          <IncludeDirectory>./VirtualAssistant.Services/</IncludeDirectory>
+          <Format>cobertura,json</Format>
+          <Include>[*]VirtualAssistant.*</Include>
+          <Exclude>[xunit.*]*,[*.Tests*]*,[Microsoft.*]*,[System.*]*</Exclude>
+          <ExcludeByFile>**/Program.cs,**/*.Designer.cs,**/AssemblyInfo.cs</ExcludeByFile>
           <IncludeDirectory>./VirtualAssistant.Core/</IncludeDirectory>
+          <IncludeDirectory>./VirtualAssistant.Services/</IncludeDirectory>
           <SingleHit>false</SingleHit>
           <UseSourceLink>true</UseSourceLink>
           <SkipAutoProps>false</SkipAutoProps>
-          <DeterministicReport>true</DeterministicReport>
+          <DeterministicReport>false</DeterministicReport>
         </Configuration>
       </DataCollector>
     </DataCollectors>

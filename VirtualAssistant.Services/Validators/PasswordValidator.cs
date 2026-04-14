@@ -3,18 +3,10 @@ namespace VirtualAssistant.Services.Validators
     using System;
     using System.Linq;
 
-    /// <summary>
-    /// Validates passwords according to security policies.
-    /// </summary>
-    public class PasswordValidator
+    public static class PasswordValidator
     {
         private const int MinPasswordLength = 8;
 
-        /// <summary>
-        /// Validates a password against security policies.
-        /// </summary>
-        /// <param name="password">The password to validate.</param>
-        /// <returns>True if the password meets all requirements, otherwise false.</returns>
         public static bool ValidatePassword(string password)
         {
             if (string.IsNullOrEmpty(password))
