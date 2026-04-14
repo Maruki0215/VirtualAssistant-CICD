@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <CodeAnalysisRuleSet>..\ruleset.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605;CS1591</WarningsAsErrors>
+    <NoWarn>1701;1702;SA0001;SA1600;SA1633;SA1652;SA1200;SA1300;SA1307;SA1401;SA1407;SA1413;SA1507;SA1513;SA1201;SA1202;SA1203;SA1204;SA1205;SA1206;SA1207;SA1208;SA1209;SA1210;SA1211;SA1212;SA1213;SA1214;SA1215;SA1216;SA1217;SA1302;SA1303;SA1304;SA1305;SA1306;SA1308;SA1309;SA1310;SA1311;SA1312;SA1313;SA1314;SA1315;SA1316;SA1400;SA1402;SA1403;SA1404;SA1405;SA1406;SA1408;SA1410;SA1411;SA1412;SA1413;SA1414;SA1500;SA1501;SA1502;SA1503;SA1504;SA1505;SA1506;SA1508;SA1509;SA1510;SA1511;SA1512;SA1514;SA1515;SA1516;SA1517;SA1518;SA1519;SA1520;SA1601;SA1602;SA1604;SA1605;SA1606;SA1607;SA1608;SA1609;SA1610;SA1611;SA1612;SA1613;SA1614;SA1615;SA1616;SA1617;SA1618;SA1619;SA1620;SA1621;SA1622;SA1623;SA1624;SA1625;SA1626;SA1627;SA1628;SA1629;SA1630;SA1631;SA1632;SA1633;SA1634;SA1635;SA1636;SA1637;SA1638;SA1639;SA1640;SA1641;SA1642;SA1643;SA1644;SA1645;SA1646;SA1647;SA1648;SA1649;SA1650;SA1651;SA1652;SX1101;SX1309;SX1309S;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="9.25.0.90414">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.507">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include=".stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VirtualAssistant.Core\VirtualAssistant.Core.csproj" />
+  </ItemGroup>
+
+</Project>

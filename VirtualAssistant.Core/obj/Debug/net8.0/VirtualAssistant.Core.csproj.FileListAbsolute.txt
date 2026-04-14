@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\bin\Debug\net8.0\VirtualAssistant.Core.deps.json
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\bin\Debug\net8.0\VirtualAssistant.Core.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\bin\Debug\net8.0\VirtualAssistant.Core.pdb
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\VirtualAssistant.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\VirtualAssistant.Core.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\VirtualAssistant.Core.AssemblyInfo.cs
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\VirtualAssistant.Core.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\VirtualAssistant.Core.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\refint\VirtualAssistant.Core.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\VirtualAssistant.Core.pdb
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Core\obj\Debug\net8.0\ref\VirtualAssistant.Core.dll

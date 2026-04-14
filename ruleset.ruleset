@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="VirtualAssistant Rules" Description="Custom rules for VirtualAssistant project" ToolsVersion="17.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- Правила именования -->
+    <Rule Id="SA1300" Action="Error" /> <!-- ElementMustBeginWithUpperCaseLetter -->
+    <Rule Id="SA1303" Action="Error" /> <!-- FieldNamesMustBeginWithLowerCaseLetter -->
+    <Rule Id="SA1306" Action="Error" /> <!-- FieldNamesMustBeginWithLowerCaseLetter -->
+    <Rule Id="SA1307" Action="Error" /> <!-- AccessibleFieldsMustBeginWithUpperCaseLetter -->
+    <Rule Id="SA1308" Action="Warning" /> <!-- VariableNamesMustNotBePrefixed -->
+    <Rule Id="SA1309" Action="Warning" /> <!-- FieldNamesMustNotBeginWithUnderscore -->
+    
+    <!-- Правила читаемости -->
+    <Rule Id="SA1101" Action="Error" /> <!-- PrefixLocalCallsWithThis -->
+    <Rule Id="SA1106" Action="Error" /> <!-- CodeMustNotContainEmptyStatements -->
+    <Rule Id="SA1107" Action="Error" /> <!-- CodeMustNotContainMultipleStatementsOnOneLine -->
+    <Rule Id="SA1108" Action="Warning" /> <!-- BlockStatementsMustNotContainEmbeddedComments -->
+    <Rule Id="SA1111" Action="Error" /> <!-- ClosingParenthesisMustBeOnLineOfLastParameter -->
+    <Rule Id="SA1116" Action="Warning" /> <!-- SplitParametersMustStartOnLineAfterDeclaration -->
+    <Rule Id="SA1117" Action="Warning" /> <!-- ParametersMustBeOnSameLineOrSeparateLines -->
+    
+    <!-- Правила расположения -->
+    <Rule Id="SA1200" Action="Warning" /> <!-- UsingDirectivesMustBePlacedWithinNamespace -->
+    <Rule Id="SA1201" Action="Error" /> <!-- ElementsMustAppearInTheCorrectOrder -->
+    <Rule Id="SA1202" Action="Error" /> <!-- ElementsMustBeOrderedByAccess -->
+    <Rule Id="SA1203" Action="Error" /> <!-- ConstantsMustAppearBeforeFields -->
+    <Rule Id="SA1204" Action="Error" /> <!-- StaticElementsMustAppearBeforeInstanceElements -->
+    <Rule Id="SA1205" Action="Warning" /> <!-- PartialElementsMustBeDeclared -->
+    <Rule Id="SA1206" Action="Error" /> <!-- DeclarationKeywordsMustFollowOrder -->
+    <Rule Id="SA1207" Action="Warning" /> <!-- ProtectedMustComeBeforeInternal -->
+    <Rule Id="SA1208" Action="Warning" /> <!-- SystemUsingDirectivesMustComeFirst -->
+    <Rule Id="SA1209" Action="Warning" /> <!-- UsingAliasDirectivesMustBePlacedAfterOtherUsingDirectives -->
+    
+    <!-- Правила обслуживания -->
+    <Rule Id="SA1400" Action="Error" /> <!-- AccessModifierMustBeDeclared -->
+    <Rule Id="SA1401" Action="Error" /> <!-- FieldsMustBePrivate -->
+    <Rule Id="SA1402" Action="Error" /> <!-- FileMayOnlyContainASingleClass -->
+    <Rule Id="SA1403" Action="Warning" /> <!-- FileMayOnlyContainASingleNamespace -->
+    <Rule Id="SA1404" Action="Error" /> <!-- CodeAnalysisSuppressionMustHaveJustification -->
+    <Rule Id="SA1405" Action="Warning" /> <!-- DebugAssertMustProvideMessageText -->
+    <Rule Id="SA1406" Action="Error" /> <!-- DebugFailMustProvideMessageText -->
+    <Rule Id="SA1407" Action="Warning" /> <!-- ArithmeticExpressionsMustDeclarePrecedence -->
+    <Rule Id="SA1408" Action="Error" /> <!-- ConditionalExpressionsMustDeclarePrecedence -->
+    
+    <!-- Правила именования -->
+    <Rule Id="SA1500" Action="Warning" /> <!-- CurlyBracketsForMultiLineStatementsMustNotShareLine -->
+    <Rule Id="SA1501" Action="Error" /> <!-- StatementMustNotBeOnSingleLine -->
+    <Rule Id="SA1502" Action="Error" /> <!-- ElementMustNotBeOnSingleLine -->
+    <Rule Id="SA1503" Action="Error" /> <!-- CurlyBracketsMustNotBeOmitted -->
+    <Rule Id="SA1504" Action="Warning" /> <!-- AllAccessorsMustBeMultiLineOrSingleLine -->
+    <Rule Id="SA1505" Action="Error" /> <!-- OpeningCurlyBracketsMustNotBeFollowedByBlankLine -->
+    <Rule Id="SA1506" Action="Error" /> <!-- ElementDocumentationHeadersMustNotBeFollowedByBlankLine -->
+    <Rule Id="SA1507" Action="Warning" /> <!-- CodeMustNotContainMultipleBlankLinesInARow -->
+    <Rule Id="SA1508" Action="Error" /> <!-- ClosingCurlyBracketsMustNotBePrecededByBlankLine -->
+    <Rule Id="SA1509" Action="Warning" /> <!-- OpeningCurlyBracketsMustNotBePrecededByBlankLine -->
+    
+    <!-- Правила документации -->
+    <Rule Id="SA1600" Action="Warning" /> <!-- ElementsMustBeDocumented -->
+    <Rule Id="SA1601" Action="Warning" /> <!-- PartialElementsMustBeDocumented -->
+    <Rule Id="SA1602" Action="Warning" /> <!-- EnumerationItemsMustBeDocumented -->
+    <Rule Id="SA1604" Action="Warning" /> <!-- ElementDocumentationMustHaveSummary -->
+    <Rule Id="SA1605" Action="Warning" /> <!-- PartialElementDocumentationMustHaveSummary -->
+    <Rule Id="SA1606" Action="Warning" /> <!-- ElementDocumentationMustHaveSummaryText -->
+    <Rule Id="SA1607" Action="Warning" /> <!-- PartialElementDocumentationMustHaveSummaryText -->
+    <Rule Id="SA1608" Action="Warning" /> <!-- ElementDocumentationMustNotHaveDefaultSummary -->
+    <Rule Id="SA1609" Action="Warning" /> <!-- PropertyDocumentationMustHaveValue -->
+    
+    <!-- Правила сложности -->
+    <Rule Id="SX1101" Action="Warning" /> <!-- DoNotPrefixLocalCallsWithThis -->
+  </Rules>
+  <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
+    <Rule Id="S1125" Action="Error" /> <!-- Boolean literals should not be redundant -->
+    <Rule Id="S1764" Action="Error" /> <!-- Identical expressions should not be used -->
+    <Rule Id="S1854" Action="Error" /> <!-- Dead stores should be removed -->
+    <Rule Id="S2225" Action="Error" /> <!-- "ToString()" method should not return null -->
+    <Rule Id="S2234" Action="Warning" /> <!-- Parameters should be passed in the correct order -->
+    <Rule Id="S2259" Action="Error" /> <!-- Null pointers should not be dereferenced -->
+    <Rule Id="S2275" Action="Warning" /> <!-- Composite format strings should be correct -->
+    <Rule Id="S2292" Action="Warning" /> <!-- Trivial properties should be auto-implemented -->
+    <Rule Id="S2325" Action="Warning" /> <!-- Methods should not be made static -->
+    <Rule Id="S2326" Action="Warning" /> <!-- Unused type parameters should be removed -->
+    <Rule Id="S2360" Action="Warning" /> <!-- Optional parameters should not be used -->
+    <Rule Id="S2368" Action="Warning" /> <!-- Public methods should not have multidimensional array parameters -->
+    <Rule Id="S2372" Action="Warning" /> <!-- Exceptions should not be thrown from property getters -->
+    <Rule Id="S2386" Action="Warning" /> <!-- Mutable fields should not be public static -->
+    <Rule Id="S2428" Action="Warning" /> <!-- Threads should not be started in constructors -->
+    <Rule Id="S2436" Action="Warning" /> <!-- Types should not have methods with the same signature -->
+    <Rule Id="S2479" Action="Warning" /> <!-- Control characters should not be used in regular expressions -->
+    <Rule Id="S2486" Action="Warning" /> <!-- Generic exceptions should not be caught -->
+    <Rule Id="S2553" Action="Warning" /> <!-- Delegate subtraction should be used with care -->
+    <Rule Id="S2583" Action="Error" /> <!-- Conditionally executed code should be reachable -->
+    <Rule Id="S2589" Action="Error" /> <!-- Conditionally executed code should be reachable -->
+    <Rule Id="S2612" Action="Warning" /> <!-- File permission checks should be safe -->
+    <Rule Id="S2674" Action="Warning" /> <!-- The result of a LINQ 'OrderBy' call should not be ignored -->
+    <Rule Id="S2688" Action="Warning" /> <!-- "GetHashCode" should not reference mutable fields -->
+    <Rule Id="S2692" Action="Error" /> <!-- Indexes should not be out of bounds -->
+    <Rule Id="S2699" Action="Warning" /> <!-- Tests should include assertions -->
+    <Rule Id="S2701" Action="Warning" /> <!-- Literal boolean values should not be used in assertions -->
+    <Rule Id="S2737" Action="Warning" /> <!-- "catch" clauses should do more than rethrow -->
+    <Rule Id="S2743" Action="Warning" /> <!-- Static fields should not be used in generic types -->
+    <Rule Id="S2757" Action="Warning" /> <!-- Assignment operators should not be used in sub-expressions -->
+    <Rule Id="S2760" Action="Warning" /> <!-- Lock should be used on a dedicated object instance -->
+    <Rule Id="S2761" Action="Warning" /> <!-- "async" methods should not return "void" -->
+    <Rule Id="S2778" Action="Warning" /> <!-- Regex patterns should not be malformed -->
+    <Rule Id="S2789" Action="Warning" /> <!-- "object" should not be used as a type constraint -->
+    <Rule Id="S2857" Action="Warning" /> <!-- SQL keywords should be written with the right case -->
+    <Rule Id="S2930" Action="Warning" /> <!-- "IDisposable" should be implemented correctly -->
+    <Rule Id="S2931" Action="Warning" /> <!-- Classes with "IDisposable" members should implement "IDisposable" -->
+    <Rule Id="S2933" Action="Warning" /> <!-- Fields that are only assigned in the constructor should be "readonly" -->
+    <Rule Id="S2934" Action="Warning" /> <!-- Properties should be preferred over public fields -->
+    <Rule Id="S2952" Action="Warning" /> <!-- Disposable fields should be disposed -->
+    <Rule Id="S2953" Action="Warning" /> <!-- Methods named "Dispose" should implement "IDisposable.Dispose" -->
+    <Rule Id="S2971" Action="Warning" /> <!-- LINQ: "Where" clause and "Any" should be simplified -->
+    <Rule Id="S2995" Action="Warning" /> <!-- Return values from "Object.ReferenceEquals" should not be negated -->
+    <Rule Id="S2996" Action="Warning" /> <!-- Attributes should not be used to prevent tests -->
+    <Rule Id="S2997" Action="Warning" /> <!-- "await" should be used on the right side of "&&" and "||" with caution -->
+    <Rule Id="S3005" Action="Warning" /> <!-- "async" and "await" should not be misused -->
+    <Rule Id="S3011" Action="Warning" /> <!-- Reflection should not be used to bypass member accessibility -->
+    <Rule Id="S3042" Action="Warning" /> <!-- Types should not be referenced from their own "using" directive -->
+    <Rule Id="S3052" Action="Warning" /> <!-- Types should not be referenced by their full name -->
+    <Rule Id="S3060" Action="Warning" /> <!-- "is" should not be used with "this" -->
+    <Rule Id="S3075" Action="Warning" /> <!-- "Time.zoneinfo" should be used instead of "TimeZone" -->
+    <Rule Id="S3168" Action="Warning" /> <!-- "async" methods should not be blocking -->
+    <Rule Id="S3172" Action="Warning" /> <!-- Delegate subtraction should be used with care -->
+    <Rule Id="S3215" Action="Warning" /> <!-- Interfaces should not be empty -->
+    <Rule Id="S3216" Action="Warning" /> <!-- "ConfigureAwait" should be used -->
+    <Rule Id="S3217" Action="Warning" /> <!-- "Where" and "OfType" should not be used on possibly null reference -->
+    <Rule Id="S3218" Action="Warning" /> <!-- "using" directive and "using" statement should not be misused -->
+    <Rule Id="S3220" Action="Warning" /> <!-- Method calls should not return unexpected values -->
+    <Rule Id="S3235" Action="Warning" /> <!-- Redundant "ToArray" call -->
+    <Rule Id="S3236" Action="Warning" /> <!-- Caller information arguments should not be provided explicitly -->
+    <Rule Id="S3237" Action="Warning" /> <!-- ValueTuple usage should be correct -->
+    <Rule Id="S3240" Action="Warning" /> <!-- "??" should be used instead of checking for null -->
+    <Rule Id="S3241" Action="Warning" /> <!-- Methods should not return values that are never used -->
+    <Rule Id="S3242" Action="Warning" /> <!-- Generic type parameters should be named with meaningful names -->
+    <Rule Id="S3244" Action="Warning" /> <!-- "ArgumentNullException" should be thrown for "null" arguments -->
+    <Rule Id="S3247" Action="Warning" /> <!-- "ToList" should be used instead of "new List" -->
+    <Rule Id="S3249" Action="Warning" /> <!-- "base" calls should not be redundant -->
+    <Rule Id="S3251" Action="Warning" /> <!-- Implementations should be provided for partial methods -->
+    <Rule Id="S3253" Action="Warning" /> <!-- "params" should be used only on the last parameter -->
+    <Rule Id="S3254" Action="Warning" /> <!-- Redundant "default" expression -->
+    <Rule Id="S3256" Action="Warning" /> <!-- "string.IsNullOrEmpty" should be used instead of comparing to empty string -->
+    <Rule Id="S3257" Action="Warning" /> <!-- Declarations and initializations should be redundant -->
+    <Rule Id="S3260" Action="Warning" /> <!-- "Module" should not be used -->
+    <Rule Id="S3261" Action="Warning" /> <!-- Namespaces should not be empty -->
+    <Rule Id="S3262" Action="Warning" /> <!-- "params" should be used only on the last parameter -->
+    <Rule Id="S3263" Action="Warning" /> <!-- "ThreadStatic" should not be used with "async" -->
+    <Rule Id="S3264" Action="Warning" /> <!-- "GC.Collect" should not be called -->
+    <Rule Id="S3265" Action="Warning" /> <!-- Non-flags enums should not be marked with "FlagsAttribute" -->
+    <Rule Id="S3266" Action="Warning" /> <!-- "Equals" and "GetHashCode" should be overridden in pairs -->
+    <Rule Id="S3267" Action="Warning" /> <!-- "Default" should not be used with "Type.GetType" -->
+    <Rule Id="S3268" Action="Warning" /> <!-- "MemberData" should be used correctly -->
+    <Rule Id="S3269" Action="Warning" /> <!-- "ValueTask" should be consumed correctly -->
+    <Rule Id="S3270" Action="Warning" /> <!-- "Equals" should not be used for value equality -->
+    <Rule Id="S3271" Action="Warning" /> <!-- "typeof" should be used instead of "GetType" -->
+    <Rule Id="S3272" Action="Warning" /> <!-- "ExpandoObject" should be used with care -->
+    <Rule Id="S3273" Action="Warning" /> <!-- "ValueType" should not be used as a type parameter -->
+    <Rule Id="S3274" Action="Warning" /> <!-- "ISerializable" should be implemented correctly -->
+    <Rule Id="S3275" Action="Warning" /> <!-- "ICloneable" should not be implemented -->
+    <Rule Id="S3276" Action="Warning" /> <!-- "Conditional" attributes should be used correctly -->
+    <Rule Id="S3277" Action="Warning" /> <!-- "using" should be used with "IDisposable" -->
+    <Rule Id="S3278" Action="Warning" /> <!-- "Assembly.GetExecutingAssembly" should not be used -->
+    <Rule Id="S3279" Action="Warning" /> <!-- "GC.SuppressFinalize" should not be called for types without finalizers -->
+    <Rule Id="S3280" Action="Warning" /> <!-- "SerializableAttribute" should not be used -->
+    <Rule Id="S3281" Action="Warning" /> <!-- "SecurityCriticalAttribute" should not be used -->
+    <Rule Id="S3282" Action="Warning" /> <!-- "SuppressUnmanagedCodeSecurityAttribute" should not be used -->
+    <Rule Id="S3283" Action="Warning" /> <!-- "UnverifiableCodeAttribute" should not be used -->
+    <Rule Id="S3284" Action="Warning" /> <!-- "CLSCompliantAttribute" should not be used -->
+    <Rule Id="S3285" Action="Warning" /> <!-- "ComVisibleAttribute" should not be used -->
+    <Rule Id="S3286" Action="Warning" /> <!-- "TypeLibTypeAttribute" should not be used -->
+    <Rule Id="S3287" Action="Warning" /> <!-- "TypeLibFuncAttribute" should not be used -->
+    <Rule Id="S3288" Action="Warning" /> <!-- "TypeLibVarAttribute" should not be used -->
+    <Rule Id="S3289" Action="Warning" /> <!-- "GuidAttribute" should not be used -->
+    <Rule Id="S3290" Action="Warning" /> <!-- "MarshalAsAttribute" should not be used -->
+    <Rule Id="S3291" Action="Warning" /> <!-- "DllImportAttribute" should not be used -->
+    <Rule Id="S3292" Action="Warning" /> <!-- "StructLayoutAttribute" should not be used -->
+    <Rule Id="S3293" Action="Warning" /> <!-- "FieldOffsetAttribute" should not be used -->
+    <Rule Id="S3294" Action="Warning" /> <!-- "UnmanagedFunctionPointerAttribute" should not be used -->
+    <Rule Id="S3295" Action="Warning" /> <!-- "OutAttribute" should not be used -->
+    <Rule Id="S3296" Action="Warning" /> <!-- "InAttribute" should not be used -->
+    <Rule Id="S3297" Action="Warning" /> <!-- "OptionalAttribute" should not be used -->
+    <Rule Id="S3298" Action="Warning" /> <!-- "DefaultParameterValueAttribute" should not be used -->
+  </Rules>
+</RuleSet>

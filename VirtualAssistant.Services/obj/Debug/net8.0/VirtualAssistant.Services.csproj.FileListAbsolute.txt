@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\bin\Debug\net8.0\VirtualAssistant.Services.deps.json
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\bin\Debug\net8.0\VirtualAssistant.Services.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\bin\Debug\net8.0\VirtualAssistant.Services.pdb
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\bin\Debug\net8.0\VirtualAssistant.Core.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\bin\Debug\net8.0\VirtualAssistant.Core.pdb
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.AssemblyInfo.cs
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualA.4943F3DF.Up2Date
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\refint\VirtualAssistant.Services.dll
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.pdb
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\ref\VirtualAssistant.Services.dll
