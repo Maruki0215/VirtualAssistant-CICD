@@ -96,6 +96,7 @@ C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssis
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\obj\Debug\net8.0\VirtualAssistant.Tests.Unit.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\obj\Debug\net8.0\VirtualAssistant.Tests.Unit.AssemblyInfo.cs
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\obj\Debug\net8.0\VirtualAssistant.Tests.Unit.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\obj\Debug\net8.0\VirtualAssistant.Tests.Unit.sourcelink.json
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\obj\Debug\net8.0\VirtualA.5D8F7843.Up2Date
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\obj\Debug\net8.0\VirtualAssistant.Tests.Unit.dll
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Tests.Unit\obj\Debug\net8.0\refint\VirtualAssistant.Tests.Unit.dll

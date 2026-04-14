@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using VirtualAssistant.Core.Models;
-
 namespace VirtualAssistant.Services.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using VirtualAssistant.Core.Models;
+
     /// <summary>
     /// Provides authentication services for the virtual assistant.
     /// </summary>
     public class AuthenticationService
     {
         private readonly List<User> users;
-        private User? currentUser;
+        private User currentUser;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthenticationService"/> class.
@@ -20,22 +19,7 @@ namespace VirtualAssistant.Services.Services
         {
             this.users = new List<User>();
             this.InitializeDefaultUsers();
-        }
-
-        private void InitializeDefaultUsers()
-        {
-            var admin = new User("admin", "admin123", "admin@test.com");
-            admin.Role = "Admin";
-            this.users.Add(admin);
-
-            var regularUser = new User("user", "user123", "user@test.com");
-            this.users.Add(regularUser);
-
-            var testUser = new User("test", "test123", "test@test.com");
-            this.users.Add(testUser);
-
-            var demoUser = new User("demo", "demo123", "demo@test.com");
-            this.users.Add(demoUser);
+            this.currentUser = null;
         }
 
         /// <summary>
@@ -51,9 +35,17 @@ namespace VirtualAssistant.Services.Services
                 return false;
             }
 
-            var user = this.users.FirstOrDefault(u => u.Username == username);
+            User user = null;
+            for (int i = 0; i < this.users.Count; i++)
+            {
+                if (this.users[i].Username == username && this.users[i].Password == password)
+                {
+                    user = this.users[i];
+                    break;
+                }
+            }
 
-            if (user is not null && user.Password == password)
+            if (user != null)
             {
                 this.currentUser = user;
                 return true;
@@ -133,12 +125,15 @@ namespace VirtualAssistant.Services.Services
                 return false;
             }
 
-            if (this.users.Any(u => u.Username == username))
+            for (int i = 0; i < this.users.Count; i++)
             {
-                return false;
+                if (this.users[i].Username == username)
+                {
+                    return false;
+                }
             }
 
-            var newUser = new User(username, password, email);
+            User newUser = new User(username, password, email);
             this.users.Add(newUser);
             return true;
         }
@@ -147,7 +142,7 @@ namespace VirtualAssistant.Services.Services
         /// Gets the currently logged-in user.
         /// </summary>
         /// <returns>The current user, or null if no user is logged in.</returns>
-        public User? GetCurrentUser()
+        public User GetCurrentUser()
         {
             return this.currentUser;
         }
@@ -158,6 +153,22 @@ namespace VirtualAssistant.Services.Services
         public void Logout()
         {
             this.currentUser = null;
+        }
+
+        private void InitializeDefaultUsers()
+        {
+            User admin = new User("admin", "admin123", "admin@test.com");
+            admin.Role = "Admin";
+            this.users.Add(admin);
+
+            User regularUser = new User("user", "user123", "user@test.com");
+            this.users.Add(regularUser);
+
+            User testUser = new User("test", "test123", "test@test.com");
+            this.users.Add(testUser);
+
+            User demoUser = new User("demo", "demo123", "demo@test.com");
+            this.users.Add(demoUser);
         }
     }
 }

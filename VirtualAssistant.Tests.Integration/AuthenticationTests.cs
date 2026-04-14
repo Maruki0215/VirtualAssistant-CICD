@@ -1,8 +1,10 @@
-using NUnit.Framework;
-using VirtualAssistant.Services.Services;
-
 namespace VirtualAssistant.Tests.Integration
 {
+    using System;
+    using NUnit.Framework;
+    using VirtualAssistant.Core.Models;
+    using VirtualAssistant.Services.Services;
+
     /// <summary>
     /// Integration tests for AuthenticationService.
     /// </summary>
@@ -17,7 +19,7 @@ namespace VirtualAssistant.Tests.Integration
         [SetUp]
         public void Setup()
         {
-            authService = new AuthenticationService();
+            this.authService = new AuthenticationService();
             TestContext.WriteLine("Integration tests started");
         }
 
@@ -27,14 +29,11 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void Login_AdminCredentials_ReturnsTrue()
         {
-            // Arrange
             string username = "admin";
             string password = "admin123";
 
-            // Act
-            bool result = authService!.Login(username, password);
+            bool result = this.authService!.Login(username, password);
 
-            // Assert
             Assert.That(result, Is.True, "Admin should be able to login");
             TestContext.WriteLine($"Admin login test: {result}");
         }
@@ -45,14 +44,11 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void Login_UserCredentials_ReturnsTrue()
         {
-            // Arrange
             string username = "user";
             string password = "user123";
 
-            // Act
-            bool result = authService!.Login(username, password);
+            bool result = this.authService!.Login(username, password);
 
-            // Assert
             Assert.That(result, Is.True, "User should be able to login");
             TestContext.WriteLine($"User login test: {result}");
         }
@@ -63,14 +59,11 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void Login_InvalidCredentials_ReturnsFalse()
         {
-            // Arrange
             string username = "fakeuser";
             string password = "fakepass";
 
-            // Act
-            bool result = authService!.Login(username, password);
+            bool result = this.authService!.Login(username, password);
 
-            // Assert
             Assert.That(result, Is.False, "Invalid credentials should not login");
             TestContext.WriteLine($"Invalid login test: {result}");
         }
@@ -81,15 +74,12 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void RegisterUser_NewUser_ReturnsTrue()
         {
-            // Arrange
             string username = "newuser_" + DateTime.Now.Ticks;
             string password = "newpass123";
             string email = $"{username}@test.com";
 
-            // Act
-            bool result = authService!.RegisterUser(username, password, email);
+            bool result = this.authService!.RegisterUser(username, password, email);
 
-            // Assert
             Assert.That(result, Is.True, "New user should be registered");
             TestContext.WriteLine($"Registration test for {username}: {result}");
         }
@@ -100,15 +90,12 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void RegisterUser_DuplicateUser_ReturnsFalse()
         {
-            // Arrange
             string username = "admin";
             string password = "admin123";
             string email = "admin@test.com";
 
-            // Act
-            bool result = authService!.RegisterUser(username, password, email);
+            bool result = this.authService!.RegisterUser(username, password, email);
 
-            // Assert
             Assert.That(result, Is.False, "Duplicate user should not be registered");
             TestContext.WriteLine($"Duplicate registration test: {result}");
         }
@@ -119,17 +106,14 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void Login_AfterRegistration_ReturnsTrue()
         {
-            // Arrange
             string username = "reguser_" + DateTime.Now.Ticks;
             string password = "regpass123";
             string email = $"{username}@test.com";
-            
-            authService!.RegisterUser(username, password, email);
 
-            // Act
-            bool result = authService.Login(username, password);
+            this.authService!.RegisterUser(username, password, email);
 
-            // Assert
+            bool result = this.authService.Login(username, password);
+
             Assert.That(result, Is.True, "Registered user should be able to login");
             TestContext.WriteLine($"Login after registration test: {result}");
         }
@@ -140,14 +124,11 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void Logout_AfterLogin_CurrentUserIsNull()
         {
-            // Arrange
-            authService!.Login("admin", "admin123");
+            this.authService!.Login("admin", "admin123");
 
-            // Act
-            authService.Logout();
-            var currentUser = authService.GetCurrentUser();
+            this.authService.Logout();
+            User? currentUser = this.authService.GetCurrentUser();
 
-            // Assert
             Assert.That(currentUser, Is.Null, "After logout, current user should be null");
             TestContext.WriteLine("Logout test passed");
         }
@@ -158,10 +139,8 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void CheckUserExists_ExistingUser_ReturnsTrue()
         {
-            // Arrange & Act
-            bool exists = authService!.CheckUserExists("admin");
+            bool exists = this.authService!.CheckUserExists("admin");
 
-            // Assert
             Assert.That(exists, Is.True, "Existing user should be found");
             TestContext.WriteLine($"CheckUserExists test: {exists}");
         }
@@ -172,10 +151,8 @@ namespace VirtualAssistant.Tests.Integration
         [Test]
         public void CheckUserExists_NonExistingUser_ReturnsFalse()
         {
-            // Arrange & Act
-            bool exists = authService!.CheckUserExists("nonexistent12345");
+            bool exists = this.authService!.CheckUserExists("nonexistent12345");
 
-            // Assert
             Assert.That(exists, Is.False, "Non-existing user should not be found");
             TestContext.WriteLine($"CheckUserExists (non-existing) test: {exists}");
         }

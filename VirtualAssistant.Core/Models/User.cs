@@ -5,9 +5,9 @@ namespace VirtualAssistant.Core.Models
     /// </summary>
     public class User
     {
-        private string username;
-        private string password;
-        private string email;
+        private readonly string username;
+        private readonly string password;
+        private readonly string email;
         private string role;
 
         /// <summary>
@@ -27,25 +27,34 @@ namespace VirtualAssistant.Core.Models
         /// <summary>
         /// Gets the username of the user.
         /// </summary>
-        public string Username => this.username;
+        public string Username
+        {
+            get { return this.username; }
+        }
 
         /// <summary>
         /// Gets the password hash of the user.
         /// </summary>
-        public string Password => this.password;
+        public string Password
+        {
+            get { return this.password; }
+        }
 
         /// <summary>
         /// Gets the email address of the user.
         /// </summary>
-        public string Email => this.email;
+        public string Email
+        {
+            get { return this.email; }
+        }
 
         /// <summary>
         /// Gets or sets the role of the user.
         /// </summary>
         public string Role
         {
-            get => this.role;
-            set => this.role = value;
+            get { return this.role; }
+            set { this.role = value; }
         }
 
         /// <summary>
@@ -77,7 +86,16 @@ namespace VirtualAssistant.Core.Models
                 return false;
             }
 
-            bool hasDigit = this.password.Any(char.IsDigit);
+            bool hasDigit = false;
+            for (int i = 0; i < this.password.Length; i++)
+            {
+                if (char.IsDigit(this.password[i]))
+                {
+                    hasDigit = true;
+                    break;
+                }
+            }
+
             return hasDigit;
         }
     }

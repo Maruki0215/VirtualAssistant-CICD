@@ -1,8 +1,8 @@
-using System;
-using System.Linq;
-
 namespace VirtualAssistant.Services.Validators
 {
+    using System;
+    using System.Linq;
+
     /// <summary>
     /// Validates passwords according to security policies.
     /// </summary>
@@ -15,35 +15,52 @@ namespace VirtualAssistant.Services.Validators
         /// </summary>
         /// <param name="password">The password to validate.</param>
         /// <returns>True if the password meets all requirements, otherwise false.</returns>
-        public bool ValidatePassword(string password)
+        public static bool ValidatePassword(string password)
         {
             if (string.IsNullOrEmpty(password))
             {
                 return false;
             }
 
-            return this.CheckLength(password) &&
-                   this.CheckHasDigit(password) &&
-                   this.CheckHasUpper(password) &&
-                   this.CheckHasLower(password);
+            if (!CheckLength(password))
+            {
+                return false;
+            }
+
+            if (!CheckHasDigit(password))
+            {
+                return false;
+            }
+
+            if (!CheckHasUpper(password))
+            {
+                return false;
+            }
+
+            if (!CheckHasLower(password))
+            {
+                return false;
+            }
+
+            return true;
         }
 
-        private bool CheckLength(string password)
+        private static bool CheckLength(string password)
         {
             return password.Length >= MinPasswordLength;
         }
 
-        private bool CheckHasDigit(string password)
+        private static bool CheckHasDigit(string password)
         {
             return password.Any(char.IsDigit);
         }
 
-        private bool CheckHasUpper(string password)
+        private static bool CheckHasUpper(string password)
         {
             return password.Any(char.IsUpper);
         }
 
-        private bool CheckHasLower(string password)
+        private static bool CheckHasLower(string password)
         {
             return password.Any(char.IsLower);
         }

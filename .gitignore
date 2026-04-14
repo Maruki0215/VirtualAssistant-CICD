@@ -62,3 +62,7 @@ coverage.xml
 
 # SonarQube
 .sonarqube/
+
+# Добавьте в конец файла .gitignore
+# Exclude empty class files
+**/Class1.cs

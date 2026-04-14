@@ -8,6 +8,7 @@ C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssis
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.AssemblyInfo.cs
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.sourcelink.json
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualA.4943F3DF.Up2Date
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\VirtualAssistant.Services.dll
 C:\Users\Admin\Desktop\УЧЕБА\ПОКПО\ЛР9\VirtualAssistant\VirtualAssistant.Services\obj\Debug\net8.0\refint\VirtualAssistant.Services.dll
